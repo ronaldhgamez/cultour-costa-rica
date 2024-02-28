@@ -1,0 +1,101 @@
+---
+
+---
+<section id="home" class="introduction-page gradient-shadow">
+	
+    <aside class="aside-info left-border">
+        <h1 class="title elsie-swash">
+            A <span class="blue">Costa</span>rri<span class="red">can</span>
+            Experience
+        </h1>
+        <p>
+            Dive into a welcoming and friendly <span class="green"
+                >cultural experience</span
+            >, where you'll be treated as a cherished <span class="green"
+                >member</span
+            > of the <span class="green">family</span>!
+        </p>
+		
+	</aside>
+	
+
+</section>
+<hr style="border: 4px solid rgba(0, 0, 255, 0.3)">
+<hr style="border: 4px solid rgba(255, 255, 255, 0.3)">
+<hr style="border: 6px solid rgba(255, 0, 0, 0.3)">
+<hr style="border: 4px solid rgba(255, 255, 255, 0.3)">
+<hr style="border: 4px solid rgba(0, 0, 255, 0.3)">
+
+<style>
+	
+    .introduction-page {
+		height: 100dvh;
+		display: flex;
+	}
+
+	#home {
+
+	}
+
+	.gradient-shadow {
+		background: linear-gradient(
+				to right,
+				rgba(0, 0, 0, 0.5) 10%,
+				transparent 25%,
+				#09050b 64%,
+				#161512 110%
+			),
+			url("house.webp") no-repeat;
+		/* aspect-ratio: 965/759; */
+		filter:saturate(130%);
+	}
+
+	.aside-info {
+		position: absolute;
+		top: 45%;
+		left: 58%;
+		/* outline: dotted 3px blue; */
+
+		.title {
+			max-width: 450px;
+			font-size: 4em;
+			text-wrap: balance;
+			/* outline: dotted 3px greenyellow; */
+		}
+
+
+		& p {
+			/* outline: dotted 3px greenyellow; */
+			text-wrap: pretty;
+			max-width: 400px;
+			font-size: 1.2em;
+		}
+	}
+
+	.left-border {
+		padding: 20px;
+		border-left: 8px solid rgb(255, 255, 255, 0.5);
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.red {
+		color: red;
+	}
+
+	.blue {
+		color: rgb(3, 3, 220);
+	}
+
+	.green {
+		color: rgb(255, 245, 47);
+	}
+
+	/* tours */
+	#tours {
+		background-color: black;
+		width: 100%;
+		height: 1080px;
+	}
+</style>

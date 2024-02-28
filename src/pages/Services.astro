@@ -1,0 +1,50 @@
+---
+import ServiceCard from '../components/ServiceCard.astro'
+---
+
+<section id="services">
+    <h1 class="tour elsie-swash">Our Cooking Class</h1>
+    <div class="services-list center">
+        <ServiceCard
+            title="Typical Lunch or Dinner"
+            description="As our ancestors, we use the original wood stove in la Casona for the preparation of our delicious countrystyle dishes. We offer a carefully selected 3- course lunch that allow you to taste traditional Costa Rican food prepared with organics herbs very popular in rural areas and cooked on our wood stove."
+            image="https://cultourcostarica.com/images/clases/21-04-04-13-36-43-157_deco.jpg"
+            href="https://www.loveandlemons.com/green-salad-recipe/"
+        />
+        <ServiceCard
+            title="Tortilla Class"
+            description="As our ancestors, we use the original wood stove in la Casona for the preparation of our delicious countrystyle dishes. We offer a carefully selected 3- course lunch that allow you to taste traditional Costa Rican food prepared with organics herbs very popular in rural areas and cooked on our wood stove."
+            image="https://cultourcostarica.com/images/clases/cultour_24_CcPnCqC.jpg"
+            href="https://www.loveandlemons.com/green-salad-recipe/"
+        />
+        <ServiceCard
+            title="Costa Rica Cooking Class"
+            description="The best way to understand a country is through its cuisine! We give you the opportunity to learn to cook on a wooden stove and the typical Costa Rican way. Cooking classes are held by local family with a profound knowledge of the preparation of typical dishes."
+            image="https://cdn.loveandlemons.com/wp-content/uploads/2021/04/green-salad.jpg"
+            href="https://www.loveandlemons.com/green-salad-recipe/"
+        />
+    </div>
+</section>
+
+<style>
+#services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 340px;
+    padding: 120px 0;
+}
+
+.tour {
+    font-size: 2.6em;
+    padding-bottom: 40px;
+}
+
+.services-list {
+    /* outline: auto; */
+    max-width: 1200px;
+    min-width: 340px;
+    flex-wrap: wrap;
+    gap: 45px;
+}
+</style>

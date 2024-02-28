@@ -1,0 +1,79 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    image: string;
+    href: string;
+}
+
+const { title, description, image, href } = Astro.props;
+---
+
+<article class="service-card">
+    <img src={image} alt="" />
+    <footer>
+        <section class="information center">
+            <h2 class="title">{title}</h2>
+            <a class="book-button center" href={href} target="_blank" >Book</a>
+        </section>
+        <p class="description">{description}</p>
+    </footer>
+</article>
+
+<style>
+    .service-card {
+        min-width: 340px;
+        max-width: 500px;
+        background-color: #111;
+        overflow: hidden;
+        border-radius: 4px;
+        box-shadow: 0px 0px 2px rgb(255, 255, 255, 0.3);
+        transition: box-shadow 0.1s ease;
+        margin: 1%;
+    }
+
+    .service-card:hover {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.724);
+    }
+
+    footer {
+        margin: 3.5%;
+        position: relative;
+
+        & .description {
+            font-size: 1em;
+        }
+    }
+
+    .information {
+        justify-content: space-between;
+        margin: 10px 0;
+        gap: 3px;
+        
+
+        & .title {
+            font-size: 1.4em;
+            text-wrap: balance;
+        }
+    }
+
+    img {
+        max-width: 100%;
+        aspect-ratio: 580 / 363;
+        object-fit: cover;
+    }
+
+    .book-button {
+        width: 100px;
+        height: 40px;
+        background-color: greenyellow;
+        color: black;
+        font-weight: bold;
+        transition: transform 0.3s ease;
+    }
+
+    .book-button:hover {
+        background-color: greenyellow;
+        transform: scale(1.1);
+    }
+</style>

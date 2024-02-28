@@ -1,0 +1,80 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		 <!-- Elsie Swash Caps Static Font -->
+		 <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+
+	*, *::before, *::after {
+		margin: 0;
+		box-sizing: border-box;
+	}
+
+	a, li {
+		text-decoration: none;
+	}
+
+	:root {
+		--text-color: #f1e7ff;
+	}
+
+	body {
+		background-color: #121314;
+		background: linear-gradient(to right,#161616 50%, #161512 110%);
+		font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		color: var(--text-color);
+	}
+
+	.center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.elsie-swash {
+		font-family: "Elsie Swash Caps", serif;
+		font-weight: 500;
+	}
+
+	/* Scroll bar */
+
+	body {
+		scrollbar-color: var(--theme-color) #555555;
+	}
+
+	/* For older versions of WebKit-based browsers (like Safari) */
+	body::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	body::-webkit-scrollbar-thumb {
+		background-color: #2d2d2d;
+		/* Dark thumb color */
+	}
+
+	body::-webkit-scrollbar-track {
+		background-color: var(--theme-color);
+		/* Dark track color */
+	}
+</style>
