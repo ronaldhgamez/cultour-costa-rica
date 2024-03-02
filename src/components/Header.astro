@@ -1,112 +1,66 @@
 <header id="cultour-header" class="header-box fixed-header">
     <section id="cultour-logo">
         <img class="logo" src="logo.png" alt="Costa Rica Flag" width="100%" />
-        <img
-            class="cr-flag"
-            src="cr-flag.gif"
-            alt="Costa Rica Flag"
-            width="18%"
-        />
+        <img class="cr-flag" src="cr-flag.gif" alt="Costa Rica Flag" width="18%" />
     </section>
 
-    <div class="hamburger-menu">
-        <svg
-            width="65px"
-            height="65px"
-            viewBox="0 0 24.00 24.00"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            stroke="#000000"
-            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke="#CCCCCC"
-                stroke-width="0.192"></g><g id="SVGRepo_iconCarrier">
-                <path
-                    d="M20 7L4 7"
-                    stroke="#d6e8ff"
-                    stroke-width="2.4"
-                    stroke-linecap="round"></path>
-                <path
-                    opacity="0.5"
-                    d="M20 12L4 12"
-                    stroke="#d6e8ff"
-                    stroke-width="2.4"
-                    stroke-linecap="round"></path>
-                <path
-                    d="M20 17L4 17"
-                    stroke="#d6e8ff"
-                    stroke-width="2.4"
-                    stroke-linecap="round"></path>
-            </g></svg
-        >
+    <div id="hamburger-menu">
+        <img src="hamburger.svg" alt="Hamburger Menu Icon SVG">
     </div>
-    <div  id="cultour-nav">
-    <nav class="center cultour-nav" >
-        <a class="nav-box center" href="#home">Home</a>
-        <a class="nav-box center" href="#tours">Tours</a>
-        <a class="nav-box center" href="">Gallery</a>
-        <a class="nav-box center" href="">Contact</a>
-        <section class="nav-box center">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                class="option-icon"
-                width="20"
-                height="20"
-                fill="#fff"
-            >
-                <path d="M0 0h24v24H0z" fill="none"></path>
-                <path
-                    d=" M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z "
-                    class="css-c4d79v"></path>
-            </svg>
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                class="text-icon"
-                width="20"
-                height="20"
-                fill="#fff"
-            >
-                <path
-                    d="M12,16c-0.3,0-0.5-0.1-0.7-0.3l-6-6c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l5.3,5.3l5.3-5.3c0.4-0.4,1-0.4,1.4,0s0.4,1,0,1.4l-6,6C12.5,15.9,12.3,16,12,16z"
-                >
-                </path>
-            </svg>
-        </section>
-    </nav>
+    <div id="cultour-nav">
+        <nav class="center cultour-nav" >
+            <a class="nav-box center" href="#home">Home</a>
+            <a class="nav-box center" href="#tours">Tours</a>
+            <a class="nav-box center" href="#gallery">Gallery</a>
+            <a class="nav-box center" href="#contact">Contact</a>
+            <section class="nav-box center">
+                <img src="translate.svg" alt="">
+                <img src="down-arrow.svg" alt="">
+            </section>
+        </nav>
     </div>
 </header>
 
 <script>
+    const logo = document.getElementById("cultour-logo")!;
+    const header = document.getElementById("cultour-header")!;
+    const miDiv = document.getElementById("cultour-nav")!;
+    const hamburger = document.getElementById("hamburger-menu")!;
+
+    const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+    const maxWindowSize = 820;
+
+    const isMobileScreen = windowWidth > maxWindowSize;
+    const logoMaxSize = (isMobileScreen) ? "175px" : "120px";
+    const logoMinSize = (isMobileScreen) ? "100px" : "95px";
+
+    miDiv.style.display = (isMobileScreen) ? "flex" : "none";
+    
     window.addEventListener("scroll", () => {
-        let logo = document.getElementById("cultour-logo")!;
-        let header = document.getElementById("cultour-header")!;
-        /* let miDiv = document.getElementById("cultour-nav")!;
-        miDiv.hidden = true; */
         if (
             document.body.scrollTop > 20 ||
             document.documentElement.scrollTop > 20
         ) {
             // Adjust the smaller size as needed
-            logo.style.width = "95px";
+            logo.style.width = logoMinSize;
             header.classList.add("blur-header");
         } else {
             // Initial logo size when not scrolled
-            logo.style.width = "175px";
+            logo.style.width = logoMaxSize;
             header.classList.remove("blur-header");
         }
     });
 
-    document.addEventListener("click", function() {
-        let miDiv = document.getElementById("cultour-nav")!;
-        miDiv.hidden = (miDiv.hidden) ? false : true;
+    
+    hamburger.addEventListener("click", function() {
+        miDiv.style.display = (miDiv.style.display ===  'none' || miDiv.style.display ===  '') 
+        ? "flex" : "none";
     });
+
 </script>
 
 <style>
+
     .header-box {
         display: flex;
         justify-content: space-between;
@@ -143,10 +97,6 @@
         }
     }
 
-    .show {
-
-    }
-
     .cultour-nav {
         gap: 5px;
         height: 60px;
@@ -165,10 +115,16 @@
         }
     }
 
-    .hamburger-menu {
-        opacity: 0;
+    #hamburger-menu {
         position: absolute;
         right: 10px;
+        user-select: none;
+        transition: 0.4s transform ease;
+        display: none;
+    }
+
+    #hamburger-menu:active {
+        transform: scale(1.1);
     }
 
     .nav-box:hover {
@@ -183,13 +139,11 @@
         .cultour-nav {
             position: absolute;
             flex-direction: column;
-            width: 400px;
+            width: 320px;
             height: 400px;
             top: 75px;
             right: 20px;
-            border: solid 1px rgba(255, 255, 255, 0.5);
-            border-radius: 10px;
-            backdrop-filter: blur(50px) !important;
+            backdrop-filter: blur(50px);
             gap: 0;
 
             & a {
@@ -204,12 +158,16 @@
             }
             
             & .nav-box:hover {
-                border-radius: none;
+                border-radius: 0;
             }
         }
+        
+        #hamburger-menu {
+            display: block;
+        }
 
-        .hamburger-menu {
-            opacity: 1;
+        #cultour-logo {
+            width: 120px;
         }
     }
 </style>
