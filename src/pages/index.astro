@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Services from "../pages/Services.astro";
 import Home from "../pages/Home.astro";
 import HorizontalFlag from "../components/HorizontalFlag.astro";
+import Footer from "../pages/Footer.astro";
 ---
 
 <Layout title="Cultour Costa Rica | A Costarrican Experience">
@@ -11,13 +12,22 @@ import HorizontalFlag from "../components/HorizontalFlag.astro";
 	<main >
 		<Home></Home>
 		<!-- <HorizontalFlag></HorizontalFlag> -->
+		<!-- <div class="tropical-banner"></div> -->
 		<Services></Services>
 	</main>
 	<footer>
-
+		<Footer></Footer>
 	</footer>
 </Layout>
 
 <style>
-	
+	/* .tropical-banner {
+		background-image: url('tropical-leaves.webp');
+		background-repeat: repeat-x;
+		height: 200px;
+		width: 100%;
+		background-size: contain;
+		margin-top: -4px;
+		opacity: 0.2;
+	} */
 </style>

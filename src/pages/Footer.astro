@@ -1,0 +1,218 @@
+---
+import CultourLogo from '../components/CultourLogo.astro'
+import SocialLink from '../components/SocialLink.astro'
+import ContactInfo from '../components/ContactInfo.astro'
+---
+
+<div class="footer-container">
+    <div class="gradient-overlay"></div>
+    <section class="information">
+        <h1 class="title">~ Visit Cultour Costa Rica ~</h1>
+        <div class="address-container">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <ContactInfo
+                    title="musicosticos@gmail.com"
+                    src="mail.svg"
+                    alt="Cultour Mail Link"
+                    width="25" height="25"
+                    href='mailto:musicosticos@gmail.com'
+                />
+                <ContactInfo 
+                    title="+506 8305 7474"
+                    src="phone.svg"
+                    alt="Cultour phone number" 
+                    width="25" height="25"
+                    href='tel:+50683057474'
+                />
+                <ContactInfo 
+                    title="Click to start a WhatsApp conversation" src="whatsapp.svg" 
+                    alt="Cultour Whatsapp Link" 
+                    width="25" height="25"
+                    href='https://api.whatsapp.com/send/?phone=50683057474&text&app_absent=0'
+                />
+            </div>
+
+            <div class="contact-info">
+                <h2>Quick Address</h2>
+                
+                <ContactInfo
+                    title="Alto de Los Cedros, Monterrey, San Carlos, Alajuela"
+                    src="location.svg"
+                    alt="Cultour address Link" 
+                    width="25" height="25"
+                    href='https://acortar.link/a3YgmF'
+                />
+                <ContactInfo 
+                    title="Start Waze Trip"
+                    src="waze.svg"
+                    alt="Cultour waze lcoation" 
+                    width="25" height="25"
+                    href='https://www.waze.com/es-419/live-map/directions?navigate=yes&to=ll.10.54593089%2C-84.62529565'
+                />
+            </div>
+        </div>
+
+        <div class="social-media">
+            <SocialLink 
+                title="Instagram"
+                src="instagram.svg" 
+                alt="Cultour Instagram Link" 
+                width="47" height="47"
+                href='https://www.instagram.com/cultourcr/'
+            />
+            <SocialLink 
+                title="Facebook"
+                src="facebook.svg" 
+                alt="Cultour Facebook Link" 
+                width="50" height="50" 
+                href='https://www.facebook.com/costaricacultour' 
+            />
+            <SocialLink 
+                title="Trip Advisor" 
+                src="tripAdvisor.svg" 
+                alt="Cultour TripAdvisor Link" 
+                width="51" height="51"
+                href='https://www.tripadvisor.es/Attraction_Review-g1189998-d4600929-Reviews-Cultour_Costa_Rica-San_Carlos_Province_of_San_Jose.html' 
+            />
+        </div>
+        <p>&copy; 2024 Cultour Costa Rica</p> 
+    </section>
+
+    <div class="logo">
+        <CultourLogo width="100%" />
+    </div>
+</div>
+
+<style>
+
+    .title {
+        font-family: 'Elsie Swash Caps';
+        font-weight: 600;
+        font-size: 4em;
+        text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.9);
+        background-image: linear-gradient(to right, rgba(175, 13, 116, 0.735), #21629770);
+        background-clip: text;
+        color: transparent;
+    }
+
+    .footer-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-image: url('footer.png');
+        background-size: cover;
+        aspect-ratio: 629/267;
+        filter: contrast(110%) saturate(125%);
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+        z-index: 0;
+    }
+
+    .logo {
+        position: absolute;
+        width: 16%;
+        bottom: 25px;
+        right: 35px;
+        z-index: 1;
+    }
+
+    .address-container {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+    
+    .information {
+        position: absolute;
+        z-index: 1;
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        height: 95%;
+        
+        color: var(--text-color);
+        justify-content: flex-end;
+        align-items: center;
+
+        & p {
+            text-align: center;
+            width: 50%;
+        }
+    }
+
+    .social-media {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .contact-info {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        padding: 25px 40px;
+        width: 49%;
+        min-width: 330px;
+        border-radius: 5px;
+        /* background-color: rgba(0, 0, 0, 0.6); */
+        background: linear-gradient(to left,  rgba(2, 28, 5, 0.8), transparent, rgba(17, 28, 14, 0.9));
+    }
+
+    @media screen and (max-width: 840px) {
+    
+        .title {
+            font-size: 2em;
+        }
+
+        .footer-container {
+            height: 370px;
+            background-position: 35% 50%;
+        }
+        
+        .logo {
+            position: absolute;
+            width: 20%;
+            bottom: 10px;
+            right: 5px;
+        }
+
+        .information { 
+            height: 99%;
+            gap: 10px;
+        }
+
+        .social-media {
+            gap: 10px;
+        }
+
+        .address-container {
+            gap: 0px;
+        }
+
+        .contact-info {
+            width: 95%;
+            padding: 9px 20px;
+            gap: 10px;
+            border-radius: 0;
+        }
+
+        .contact-info h2 {
+            font-size: 1.0em;
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6));
+        }
+    }
+</style>
