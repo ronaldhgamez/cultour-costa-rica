@@ -10,7 +10,7 @@ const { title, description, image, href } = Astro.props;
 ---
 
 <article class="service-card">
-    <img src={image} alt="" />
+    <img src={image} alt={title} loading="lazy" />
     <footer>
         <section class="information center">
             <h2 class="title">{title}</h2>
